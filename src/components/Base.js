@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const containerVariant = {
+const containerVariants = {
   hidden: {
     opacity: 0,
     x: '100vw'
@@ -14,7 +14,13 @@ const containerVariant = {
       type: 'spring', 
       delay: 0.5
     }
-  }
+  },
+  exit: {
+    x: '-100vw',
+    transition: {
+      ease: 'easeInOut'
+    }
+  } 
 }
 
 const nextVariant = {
@@ -44,9 +50,10 @@ const Base = ({ addBase, pizza }) => {
 
   return (
     <motion.div className="base container"
-      variants={containerVariant}
+      variants={containerVariants}
       initial='hidden'
       animate='visible'
+      exit='exit'
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>

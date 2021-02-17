@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const containerVariant = {
@@ -28,7 +28,7 @@ const childVariant = {
   }
 }
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza }) => {  
   return (
     <motion.div className="container order"
       variants={containerVariant}
