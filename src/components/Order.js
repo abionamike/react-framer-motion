@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const containerVariant = {
@@ -28,7 +28,13 @@ const childVariant = {
   }
 }
 
-const Order = ({ pizza }) => {  
+const Order = ({ pizza, setShowModal }) => {  
+  useEffect(() => {
+    setTimeout(() => {
+      setShowModal(true);
+    }, 5000)
+  }, [setShowModal]);
+
   return (
     <motion.div className="container order"
       variants={containerVariant}
